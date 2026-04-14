@@ -1,0 +1,26 @@
+﻿const express = require('express');
+const sqlite3 = require('sqlite3').verbose();
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./swagger.json');
+
+const app = express();
+const db = new sqlite3.Database('./Bestiario.db');
+
+// Endpoint para obtener todos los enemigos del archivo SQLite.
+app.get('/enemigos', (req, res) => {
+    db.all("SELECT * FROM enemigos", [], (err, rows) => {
+        if (err) {
+            res.status(400).json({ "error": err.message });
+            return;
+        }
+        res.json({ "data": rows });
+    });
+});
+
+// Documentación interactiva de Swagger.
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
+app.listen(3000, () => {
+    console.log("Servidor API corriendo en http://localhost:3000");
+    console.log("Swagger disponible en http://localhost:3000/api-docs");
+})

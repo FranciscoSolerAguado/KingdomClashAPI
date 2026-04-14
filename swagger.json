@@ -1,0 +1,20 @@
+﻿{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Bestiario de Kingdom Clash",
+    "version": "1.0.0",
+    "description": "Documentación oficial de la API local para consultar los stats de los enemigos."
+  },
+  "paths": {
+    "/enemigos": {
+      "get": {
+        "summary": "Obtiene la lista completa de enemigos",
+        "responses": {
+          "200": {
+            "description": "Una lista JSON con todos los datos de los enemigos."
+          }
+        }
+      }
+    }
+  }
+}
