@@ -6,6 +6,11 @@ const swaggerDocument = require('./swagger.json');
 const app = express();
 const db = new sqlite3.Database('./Bestiario.db');
 
+// Redirigir la ruta raíz a la documentación de Swagger
+app.get('/', (req, res) => {
+    res.redirect('/api-docs');
+});
+
 // Endpoint para obtener todos los enemigos del archivo SQLite.
 app.get('/enemigos', (req, res) => {
     db.all("SELECT * FROM enemigos", [], (err, rows) => {
