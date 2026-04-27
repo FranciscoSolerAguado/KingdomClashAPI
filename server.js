@@ -1,12 +1,24 @@
 ﻿const express = require('express');
-const cors = require('cors');
 const sqlite3 = require('sqlite3').verbose();
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger.json');
 
 const app = express();
 
-app.use(cors());
+app.use((req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+
+    // El navegador siempre hace una pregunta previa (OPTIONS) antes del GET.
+    // Con esto le decimos a la API que responda "Sí, tienes permiso" automáticamente.
+    if (req.method === 'OPTIONS') {
+        return res.status(200).end();
+    }
+
+    next();
+});
+// ---------------------------------------------
 
 const db = new sqlite3.Database('./Bestiario.db');
 
