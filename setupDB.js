@@ -19,7 +19,7 @@ db.serialize(() => {
     stmt.run("Ratcher", 25, 7, "Meticulosos y escurridizos, esta compañia de roedores disparará a distancia con una precisión inhumana");
     stmt.run("Elite", 250, 20, "División de veteranos de incontables escaramuzas fronterizas. Portan una armaduras pesadas forjadas en las profundidades.");
     stmt.run("Boss", 1000, 35, "Líderes despiadados que han unificado a las tribus salvajes bajo un solo estandarte de guerra, la mayoría de sus integrantes no han conocido nunca la derrota en combate.");
-    stmt.run("Grunt", 100, 13, "Infantería media y tenaz de las fuerzas pantanosas, expertas en terrenos boscosos y pantanos. Avanza sin piedad tras su robusto escudo.");
+    stmt.run("Solid Snake", 100, 13, "Infantería media y tenaz de las fuerzas pantanosas, expertas en terrenos boscosos y pantanos. Avanza sin piedad tras su robusto escudo.");
     stmt.run("Maestro de las Pociones", 30, 13, "Salidos de la universidad del reino enemigo, estos excéntricos maestros que lanzan brebajes tóxicos y líquidos explosivos fabricados en su laboratorio al enemigo.");
     stmt.run("Comandante", 500, 25, "Estrategas y guerreros brillantes que coordinan los ataques tácticos desde la retaguardia del campo de batalla, cuando la situación se torna complicada en el campo de batalla, estos se lanzan a la batalla.");
     stmt.run("Guardian del Pantano", 2000, 50, "Se habla mucho de estos colosos escamosos y nada bueno, entre tantas, nunca nadie ha conseguido a alguno de ellos, se dice que no existen mas de 15.");
